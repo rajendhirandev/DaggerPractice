@@ -6,11 +6,31 @@ import javax.inject.Inject;
 
 public class Car {
     private static final String TAG = "CAR";
-    @Inject Engine engine;
-    @Inject Wheels wheels;
+    String carName = "TATA";
+    @Inject
+    Engine engine;
+    @Inject
+    Wheels wheels;
+    Remote remote;
+
+    public String getCarName() {
+        return carName;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public Wheels getWheels() {
+        return wheels;
+    }
+
+    public Remote getRemote() {
+        return remote;
+    }
 
     @Inject
-    Car(){
+    Car() {
 
     }
    /* @Inject
@@ -19,57 +39,27 @@ public class Car {
         this.wheels = wheels;
     }*/
 
+    @Inject
+    public void connectToRemote(Remote remote) {
+        this.remote = remote;
+        Log.d(TAG, "CAR: Connect to remote Initiated...");
+        remote.attachToCar(this);
+    }
+
     public void drive() {
         engine.init();
         wheels.init();
+        remote.init();
         Log.d(TAG, "drive: Vrooooh....");
     }
 }
 
-class Engine {
-    private static final String TAG = "CAR";
-    @Inject
-    public Engine() {
-    }
 
-    void init(){
-        Log.d(TAG,"Engine: Started");
-    }
-}
 
-class Wheels {
-    private static final String TAG = "CAR";
-    @Inject
-    public Wheels(Rims rims, Tires tires) {
-    }
 
-    void init(){
-        Log.d(TAG,"Wheel: I'm Ready");
-    }
-}
 
-class Tires {
-    String tireType;
 
-    @Inject
-    Tires() {
-    }
 
-}
 
-class Rims {
 
-    @Inject
-    public Rims() {
-    }
 
-    String rimType;
-
-    public String getRimType() {
-        return rimType;
-    }
-
-    public void setRimType(String rimType) {
-        this.rimType = rimType;
-    }
-}

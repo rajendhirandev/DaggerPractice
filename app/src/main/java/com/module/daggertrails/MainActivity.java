@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.module.daggertrails.dagger.CarComponent;
 import com.module.daggertrails.dagger.DaggerCarComponent;
 import com.module.daggertrails.models.Car;
-import com.module.daggertrails.models.TwoWheeler;
+import com.module.daggertrails.models.Engine;
+import com.module.daggertrails.models.Remote;
+import com.module.daggertrails.models.Wheels;
 
 import javax.inject.Inject;
 
@@ -16,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Inject
     Car car;
-    @Inject
-    TwoWheeler twoWheeler;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         //car = carComponent.getCarObj();
         carComponent.inject(this);
         car.drive();
-
-        twoWheeler.runTwoWheeler();
+        car.getRemote().testRemote();
     }
 }
