@@ -12,6 +12,12 @@ public class Car {
     @Inject
     Wheels wheels;
     Remote remote;
+    @Inject
+    IFuel fuelType;
+
+    public IFuel getFuel() {
+        return fuelType;
+    }
 
     public String getCarName() {
         return carName;
@@ -53,13 +59,3 @@ public class Car {
         Log.d(TAG, "drive: Vrooooh....");
     }
 }
-
-
-
-
-
-
-
-
-
-
