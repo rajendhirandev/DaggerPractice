@@ -2,6 +2,8 @@ package com.module.daggertrails.models;
 
 import android.util.Log;
 
+import com.module.daggertrails.models.third_party.Lights;
+
 import javax.inject.Inject;
 
 public class Car {
@@ -11,9 +13,15 @@ public class Car {
     Engine engine;
    // @Inject
     Wheels wheels;
+    @Inject
+    Lights lights;
     Remote remote;
     @Inject
     IFuel fuelType;
+
+    public Lights getLights() {
+        return lights;
+    }
 
     public IFuel getFuel() {
         return fuelType;
@@ -44,6 +52,13 @@ public class Car {
         this.engine = engine;
         this.wheels = wheels;
     }
+
+    /*@Inject
+    Car(Engine engine, Wheels wheels, Lights lights) {
+        this.engine = engine;
+        this.wheels = wheels;
+        this.lights = lights;
+    }*/
 
     @Inject
     public void connectToRemote(Remote remote) {

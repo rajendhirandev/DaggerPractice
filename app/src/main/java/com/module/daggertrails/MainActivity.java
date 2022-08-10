@@ -32,5 +32,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "CAR: Fuel Type: " + fType);
         Log.d(TAG, "CAR: Engine: " + car.getEngine().defaultEngine);
         Log.d(TAG, "CAR: Wheel Material: " + car.getWheels().defaultWheels);
+        car.getLights().display();
     }
 }
