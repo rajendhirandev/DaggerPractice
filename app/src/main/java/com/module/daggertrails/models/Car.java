@@ -47,9 +47,9 @@ public class Car {
 
     @Inject
     public void connectToRemote(Remote remote) {
-        this.remote = remote;
         Log.d(TAG, "CAR: Connect to remote Initiated...");
         remote.attachToCar(this);
+        this.remote = remote;
     }
 
     public void drive() {
