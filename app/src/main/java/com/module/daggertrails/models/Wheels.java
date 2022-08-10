@@ -6,6 +6,8 @@ import javax.inject.Inject;
 
 public class Wheels {
     private static final String TAG = "CAR";
+    public String defaultWheels = "Alloy";
+
 
     @Inject
     public Wheels(Rims rims, Tires tires) {

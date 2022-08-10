@@ -7,9 +7,9 @@ import javax.inject.Inject;
 public class Car {
     private static final String TAG = "CAR";
     String carName = "TATA";
-    @Inject
+    //@Inject
     Engine engine;
-    @Inject
+   // @Inject
     Wheels wheels;
     Remote remote;
     @Inject
@@ -35,15 +35,15 @@ public class Car {
         return remote;
     }
 
-    @Inject
+   /* @Inject
     Car() {
 
-    }
-   /* @Inject
+    }*/
+    @Inject
     Car(Engine engine, Wheels wheels) {
         this.engine = engine;
         this.wheels = wheels;
-    }*/
+    }
 
     @Inject
     public void connectToRemote(Remote remote) {

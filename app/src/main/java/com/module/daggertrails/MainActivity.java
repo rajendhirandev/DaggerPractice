@@ -30,5 +30,7 @@ public class MainActivity extends AppCompatActivity {
         car.getRemote().testRemote();
         String fType = car.getFuel().getType();
         Log.d(TAG, "CAR: Fuel Type: " + fType);
+        Log.d(TAG, "CAR: Engine: " + car.getEngine().defaultEngine);
+        Log.d(TAG, "CAR: Wheel Material: " + car.getWheels().defaultWheels);
     }
 }

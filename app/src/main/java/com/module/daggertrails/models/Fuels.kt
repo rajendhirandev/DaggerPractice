@@ -1,5 +1,6 @@
 package com.module.daggertrails.models
 
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import javax.inject.Inject
@@ -20,6 +21,12 @@ class DieselType @Inject constructor() : IFuel {
     }
 }
 
+class GasType @Inject constructor() : IFuel {
+    override fun getType(): String {
+        return "Gas"
+    }
+}
+
 @Module
 class PetrolTypeModule() {
     @Provides
@@ -30,4 +37,10 @@ class PetrolTypeModule() {
 class DieselTypeModule() {
     @Provides
     fun providesDieselType(dType: DieselType): IFuel = dType
+}
+
+@Module
+abstract class GasTypeModule() {
+    @Binds
+    abstract fun providesGasType(gType: GasType): IFuel
 }
