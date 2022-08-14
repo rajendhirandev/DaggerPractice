@@ -26,21 +26,3 @@ class GasType @Inject constructor() : IFuel {
         return "Gas"
     }
 }
-
-@Module
-class PetrolTypeModule() {
-    @Provides
-    fun providesPetrolType(pType: PetrolType): IFuel = pType
-}
-
-@Module
-class DieselTypeModule() {
-    @Provides
-    fun providesDieselType(dType: DieselType): IFuel = dType
-}
-
-@Module
-abstract class GasTypeModule() {
-    @Binds
-    abstract fun providesGasType(gType: GasType): IFuel
-}

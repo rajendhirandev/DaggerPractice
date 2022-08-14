@@ -2,6 +2,8 @@ package com.module.daggertrails.models;
 
 import android.util.Log;
 
+import com.module.daggertrails.models.third_party.Brakes;
+import com.module.daggertrails.models.third_party.CarSeats;
 import com.module.daggertrails.models.third_party.Lights;
 
 import javax.inject.Inject;
@@ -11,13 +13,31 @@ public class Car {
     String carName = "TATA";
     //@Inject
     Engine engine;
-   // @Inject
+    // @Inject
     Wheels wheels;
     @Inject
     Lights lights;
     Remote remote;
     @Inject
     IFuel fuelType;
+    @Inject
+    CarSeats seats;
+    @Inject
+    Brakes brakes;
+    @Inject
+    Glasses glasses;
+
+    public Glasses getGlasses() {
+        return glasses;
+    }
+
+    public Brakes getBrakes() {
+        return brakes;
+    }
+
+    public CarSeats getSeats() {
+        return seats;
+    }
 
     public Lights getLights() {
         return lights;
@@ -43,10 +63,10 @@ public class Car {
         return remote;
     }
 
-   /* @Inject
-    Car() {
+    /* @Inject
+     Car() {
 
-    }*/
+     }*/
     @Inject
     Car(Engine engine, Wheels wheels) {
         this.engine = engine;
