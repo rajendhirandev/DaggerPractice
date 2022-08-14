@@ -4,10 +4,12 @@ import com.module.daggertrails.MainActivity;
 import com.module.daggertrails.models.Car;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 
+@Singleton
 @Component(modules = {GasTypeModule.class, LightsModule.class, SeatModule.class, BrakeModule.class})
 public interface CarComponent {
     Car getCarObj();

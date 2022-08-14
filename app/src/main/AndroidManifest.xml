@@ -3,6 +3,7 @@
     package="com.module.daggertrails">
 
     <application
+        android:name=".DaggerApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Trails"
@@ -12,6 +13,7 @@
         <activity
             android:name=".MainActivity"
             android:label="First Screen"
+            android:screenOrientation="user"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

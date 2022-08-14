@@ -2,6 +2,7 @@ package com.module.daggertrails.models.third_party
 
 import android.util.Log
 import javax.inject.Inject
+import javax.inject.Singleton
 
 class Lights constructor(private val fgLights: FogLights, private val ledLights: LedLights) {
 
@@ -52,3 +53,6 @@ class DiscBrake {
 class HandBrake {
     val brkType = "Hand brake - Honda"
 }
+
+@Singleton
+class Owner @Inject constructor()

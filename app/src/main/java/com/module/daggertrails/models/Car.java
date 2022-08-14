@@ -5,6 +5,7 @@ import android.util.Log;
 import com.module.daggertrails.models.third_party.Brakes;
 import com.module.daggertrails.models.third_party.CarSeats;
 import com.module.daggertrails.models.third_party.Lights;
+import com.module.daggertrails.models.third_party.Owner;
 
 import javax.inject.Inject;
 
@@ -26,6 +27,13 @@ public class Car {
     Brakes brakes;
     @Inject
     Glasses glasses;
+    @Inject
+    Owner owner;
+
+
+    public Owner getOwner() {
+        return owner;
+    }
 
     public Glasses getGlasses() {
         return glasses;
