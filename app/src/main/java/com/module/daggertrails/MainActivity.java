@@ -20,9 +20,9 @@ import javax.inject.Inject;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "CAR";
-    //@Inject
+   /* //@Inject
     Car car;
-    Car car1;
+    Car car1;*/
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,17 +57,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Referring component from Application class
 
-        CarComponent carComponent1 = ((DaggerApplication)getApplication()).getAppCarComponent();
+       /* CarComponent carComponent1 = ((DaggerApplication)getApplication()).getAppCarComponent();
         car = carComponent1.getCarObj();
         printDetails(car);
         System.out.println("__________________________");
         CarComponent carComponent2 = ((DaggerApplication)getApplication()).getAppCarComponent();
         car1 = carComponent2.getCarObj();
-        printDetails(car1);
+        printDetails(car1);*/
 
     }
 
-    public void printDetails(Car car){
+   /* public void printDetails(Car car){
         car.drive();
         car.getRemote().testRemote();
         String fType = car.getFuel().getType();
@@ -79,5 +79,5 @@ public class MainActivity extends AppCompatActivity {
         car.getBrakes().brakeDetails();
         car.getGlasses().glassDetails();
         System.out.println(car.getOwner());
-    }
+    }*/
 }

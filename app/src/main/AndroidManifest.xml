@@ -11,14 +11,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DaggerTrails">
         <activity
-            android:name=".MainActivity"
-            android:label="First Screen"
-            android:screenOrientation="user"
+            android:name=".CourseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="First Screen"
+            android:screenOrientation="user">
+
+        </activity>
     </application>
+
 </manifest>
