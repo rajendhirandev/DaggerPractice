@@ -14,12 +14,7 @@ interface CourseComponent {
     @Component.Builder
     interface Builder {
         @BindsInstance
-        @Named("Primary")
-        fun bindsCertificateProvider(authorizer: String) : Builder
-
-        @BindsInstance
-        @Named("Secondary")
-        fun bindsSecondaryCertificate(authorizer: String) : Builder
+        fun bindsCertificateProvider(@Named("Primary") authorizer: String) : Builder
 
         fun buildSyllabusModule(syllabus: SyllabusModule): Builder
 

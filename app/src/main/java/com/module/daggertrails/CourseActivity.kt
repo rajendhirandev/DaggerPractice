@@ -17,7 +17,6 @@ class CourseActivity : AppCompatActivity() {
 
         DaggerCourseComponent.builder()
             .bindsCertificateProvider("Microsoft")
-            .bindsSecondaryCertificate("Amazon")
             .buildSyllabusModule(SyllabusModule(4, 10))
             .build().apply {
                 inject(this@CourseActivity)
