@@ -36,7 +36,21 @@ class Course constructor(val syllabus: Syllabus, val certifications: Certificati
     lateinit var courseMode: ICourseMode
 
 
+}
+
+class Syllabus @Inject constructor() {
+    fun topics() {
+        println("Topics...")
+    }
+}
+
+class Certifications @Inject constructor() {
+    fun awards() {
+        println("Certification Award...")
+    }
 }*/
+
+class Student @Inject constructor(val course: Course, val courseMode: ICourseMode)
 
 class Course @Inject constructor(val syllabus: Syllabus, val certifications: Certifications)
 
