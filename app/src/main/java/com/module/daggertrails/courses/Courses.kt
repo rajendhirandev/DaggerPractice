@@ -2,6 +2,7 @@ package com.module.daggertrails.courses
 
 import javax.inject.Inject
 import javax.inject.Named
+import javax.inject.Singleton
 
 // Tightly Coupled
 /*class Course {
@@ -50,7 +51,17 @@ class Certifications @Inject constructor() {
     }
 }*/
 
-class Student @Inject constructor(val course: Course, val courseMode: ICourseMode)
+//@Singleton
+class University  constructor(private val name: String) {
+    fun getMyName() = name
+}
+
+class Student @Inject constructor(
+    val course: Course,
+    val courseMode: ICourseMode,
+    val assignments: Assignments,
+    val university: University
+)
 
 class Course @Inject constructor(val syllabus: Syllabus, val certifications: Certifications)
 

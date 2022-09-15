@@ -6,14 +6,16 @@ import com.module.daggertrails.courses.Course
 import com.module.daggertrails.courses.Student
 import com.module.daggertrails.dagger.DaggerCourseComponent
 import com.module.daggertrails.dagger.SyllabusModule
+import com.module.daggertrails.dagger.UniversityModule
 import javax.inject.Inject
 
 class CourseActivity : AppCompatActivity() {
     @Inject
     lateinit var course: Course
-
     @Inject
     lateinit var student: Student
+    @Inject
+    lateinit var student1: Student
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_course)
@@ -29,11 +31,16 @@ class CourseActivity : AppCompatActivity() {
         DaggerCourseComponent.builder()
             .bindsCertificateProvider("Microsoft")
             .buildSyllabusModule(SyllabusModule(4, 10))
+            .buildUniversity(UniversityModule("PU"))
             .build().apply {
                 inject(this@CourseActivity)
             }
         course.syllabus.coverage()
         course.certifications.providedBy()
+        println("student ${student.university} - UName: ${student.university.getMyName()}")
+        println("student1 ${student1.university} - UName: ${student1.university.getMyName()}")
+        student.assignments.display()
+        student.courseMode.getCourseMode()
 
         //Log.d("Courses Activity Obj", "onCreate: ${course.syllabus.coverage()}")
         //Log.d("Courses Activity Obj", "onCreate: ${course.certifications.providedBy()}")
@@ -44,5 +51,6 @@ class CourseActivity : AppCompatActivity() {
         //course.assignments.display()
         //println("Course Mode: ${course.courseMode.getCourseMode()}")
     }
+
 }
 

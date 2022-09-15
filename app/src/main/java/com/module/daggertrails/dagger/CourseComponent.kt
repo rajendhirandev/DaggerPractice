@@ -6,8 +6,10 @@ import com.module.daggertrails.courses.Student
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
-@Component(modules = [AssignmentModule::class, OneSittingModule::class, SyllabusModule::class])
+@Singleton
+@Component(modules = [AssignmentModule::class, OneSittingModule::class, SyllabusModule::class, UniversityModule::class])
 interface CourseComponent {
     fun getCourse(): Course
     fun getStudent(): Student
@@ -16,9 +18,11 @@ interface CourseComponent {
     @Component.Builder
     interface Builder {
         @BindsInstance
-        fun bindsCertificateProvider(@Named("Primary") authorizer: String) : Builder
+        fun bindsCertificateProvider(@Named("Primary") authorizer: String): Builder
 
         fun buildSyllabusModule(syllabus: SyllabusModule): Builder
+
+        fun buildUniversity(university: UniversityModule): Builder
 
         fun build(): CourseComponent
     }
