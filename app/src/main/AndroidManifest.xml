@@ -11,11 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DaggerTrails">
         <activity
-            android:name=".CourseActivity"
+            android:name=".FirstActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -26,6 +25,8 @@
             android:screenOrientation="user">
 
         </activity>
+
+        <activity android:name=".SecondActivity" />
     </application>
 
 </manifest>
